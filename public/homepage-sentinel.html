@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel Seguridad - Tecnología, Precisión y Confianza</title>
+    <meta name="description" content="Empresa de seguridad privada de nueva generación con soluciones tecnológicas integrales, monitoreo C4, IA predictiva y drones de alta gama.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #002B4D;
+            --accent-blue: #4DB6E4;
+            --dark-gray: #1a1a1a;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --gradient-blue: linear-gradient(135deg, #002B4D 0%, #4DB6E4 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 43, 77, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo h1 span {
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 43, 77, 0.7), rgba(0, 43, 77, 0.7)), 
+                        url('./Gemini_Generated_Image_58e2v558e2v558e2.jpeg');
+                        /* url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(77, 182, 228, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #3da5d4;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(77, 182, 228, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--accent-blue);
+            margin-left: 1rem;
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--accent-blue);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Diferenciales Tecnológicos */
+        .diferenciales {
+            background: var(--dark-gray);
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .diferenciales-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .diferencial-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(77, 182, 228, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .diferencial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(77, 182, 228, 0.2);
+        }
+
+        .diferencial-card i {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .diferencial-card h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .diferencial-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Quiénes Somos */
+        .quienes-somos {
+            background: linear-gradient(rgba(0, 43, 77, 0.8), rgba(0, 43, 77, 0.8)),
+                        url('./IMG_0219.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 5rem 0;
+        }
+
+        .quienes-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .quienes-text h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+        }
+
+        .quienes-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(77, 182, 228, 0.3);
+        }
+
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            display: block;
+        }
+
+        .stat-label {
+            color: #ccc;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Servicios Destacados */
+        .servicios {
+            background: var(--light-gray);
+            padding: 5rem 0;
+            color: var(--dark-gray);
+        }
+
+        .servicios .section-title h3 {
+            color: var(--primary-blue);
+        }
+
+        .servicios .section-title p {
+            color: #666;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .servicio-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .servicio-image {
+            height: 200px;
+            background: var(--gradient-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+
+        .servicio-content {
+            padding: 2rem;
+        }
+
+        .servicio-content h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .servicio-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .servicio-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+
+        .servicio-link:hover {
+            gap: 10px;
+        }
+
+        /* Casos de Éxito */
+        .casos-exito {
+            background: var(--white);
+            padding: 5rem 0;
+            color: var(--dark-gray);
+        }
+
+        .casos-exito .section-title h3 {
+            color: var(--primary-blue);
+        }
+
+        .casos-exito .section-title p {
+            color: #666;
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonio-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .testimonio-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .testimonio-author {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .testimonio-role {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            background: linear-gradient(rgba(0, 43, 77, 0.9), rgba(0, 43, 77, 0.9)),
+                        url('./Gemini_Generated_Image_hxfbwdhxfbwdhxfb (1).jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-final h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+        }
+
+        .cta-final p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--accent-blue);
+            color: var(--white);
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #3da5d4;
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(77, 182, 228, 0.3);
+            color: #ccc;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button.secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .quienes-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .diferenciales-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="icono.png" alt="Sentinel Seguridad Logo">
+                    <h1>SENTINEL <span>SEGURIDAD</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#tecnologia">Tecnología</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Tecnología, Precisión y Confianza</h2>
+                <p>En Sentinel Seguridad protegemos lo que más valoras con soluciones integrales de vigilancia y monitoreo. Combinamos personal capacitado, tecnología de última generación e inteligencia artificial para ofrecer seguridad preventiva, trazable y adaptable a cualquier entorno.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="cta-button">Solicita una Cotización</a>
+                    <a href="#servicios" class="cta-button secondary">Conoce Nuestras Soluciones</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciales Tecnológicos -->
+    <section id="tecnologia" class="diferenciales">
+        <div class="container">
+            <div class="section-title">
+                <h3>Diferenciales Tecnológicos</h3>
+                <p>Innovación y tecnología de punta para una seguridad superior</p>
+            </div>
+            <div class="diferenciales-grid">
+                <div class="diferencial-card fade-in">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Plataforma Integral de Reporteo</h4>
+                    <p>Software en la nube para control de rondines, bitácoras digitales, evaluación de KPIs y gestión de incidencias en tiempo real.</p>
+                </div>
+                <div class="diferencial-card fade-in">
+                    <i class="fas fa-video"></i>
+                    <h4>Monitoreo Estilo C4</h4>
+                    <p>Centro de control propio con videovigilancia inteligente, respuesta remota, geolocalización y conexión a IA para detección de amenazas.</p>
+                </div>
+                <div class="diferencial-card fade-in">
+                    <i class="fas fa-brain"></i>
+                    <h4>IA y Análisis Predictivo</h4>
+                    <p>Herramientas que permiten anticipar riesgos y automatizar protocolos de seguridad avanzados.</p>
+                </div>
+                <div class="diferencial-card fade-in">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>App para Cliente</h4>
+                    <p>Aplicación personalizada para visualizar estatus de vigilancia, incidentes y comunicación directa con supervisores.</p>
+                </div>
+                <div class="diferencial-card fade-in">
+                    <i class="fas fa-plane"></i>
+                    <h4>Drones y Equipos de Alta Gama</h4>
+                    <p>Vigilancia aérea y periférica con tecnología de última generación para máxima cobertura y eficiencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos" class="quienes-somos">
+        <div class="container">
+            <div class="quienes-content">
+                <div class="quienes-text">
+                    <h4>Quiénes Somos</h4>
+                    <p>Somos una empresa de seguridad privada de nueva generación, con el propósito de ofrecer un servicio integral, confiable y altamente tecnológico, enfocado en la protección de personas, bienes e instalaciones.</p>
+                    <p>Nos especializamos en soluciones de vigilancia y monitoreo respaldadas por plataformas inteligentes, sistemas predictivos, tecnología de IA y un modelo operativo basado en eficiencia, rapidez y adaptabilidad.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Años de Experiencia</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Cobertura Nacional</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Monitoreo Continuo</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">ISO</span>
+                        <span class="stat-label">Certificaciones</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Destacados -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h3>Servicios Destacados</h3>
+                <p>Soluciones integrales de seguridad adaptadas a tus necesidades específicas</p>
+            </div>
+            <div class="servicios-grid">
+                <div class="servicio-card fade-in">
+                    <div class="servicio-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h5>Vigilancia Física</h5>
+                        <p>Protección física de inmuebles con personal capacitado, bitácoras digitales y protocolos de respuesta ante emergencias.</p>
+                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="servicio-card fade-in">
+                    <div class="servicio-image">
+                        <i class="fas fa-tower-observation"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h5>Torres Sentinel</h5>
+                        <p>Monitoreo perimetral autónomo con sistema móvil de videovigilancia alimentado por energía solar y conectividad 4G.</p>
+                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="servicio-card fade-in">
+                    <div class="servicio-image">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h5>iC5 Móviles</h5>
+                        <p>Supervisión inteligente y estratégica con vehículos equipados con estrobos y sistemas de comunicación avanzados.</p>
+                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="servicio-card fade-in">
+                    <div class="servicio-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h5>Monitoreo con IA</h5>
+                        <p>Sistema de seguridad con inteligencia artificial y protocolos de reacción de proveedores internacionales.</p>
+                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="servicio-card fade-in">
+                    <div class="servicio-image">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h5>Drones de Vigilancia</h5>
+                        <p>Vigilancia aérea y periférica con drones de alta gama para máxima cobertura y eficiencia operativa.</p>
+                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="servicio-card fade-in">
+                    <div class="servicio-image">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="servicio-content">
+                        <h5>Escoltas y Guardia Armado</h5>
+                        <p>Seguridad ejecutiva y operativa con personal entrenado tácticamente y validado por SEDENA/SEGOB.</p>
+                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de Éxito -->
+    <section class="casos-exito">
+        <div class="container">
+            <div class="section-title">
+                <h3>Casos de Éxito</h3>
+                <p>La confianza de gobiernos municipales y empresas líderes en México</p>
+            </div>
+            <div class="testimonios-grid">
+                <div class="testimonio-card fade-in">
+                    <div class="testimonio-text">
+                        "Sentinel ha transformado nuestra seguridad municipal con tecnología de punta y respuesta inmediata 24/7."
+                    </div>
+                    <div class="testimonio-author">Gobierno Municipal de Tijuana</div>
+                    <div class="testimonio-role">Departamento de Seguridad Pública</div>
+                </div>
+                <div class="testimonio-card fade-in">
+                    <div class="testimonio-text">
+                        "La plataforma de monitoreo nos da visibilidad total de nuestras operaciones de seguridad en tiempo real."
+                    </div>
+                    <div class="testimonio-author">Parque Industrial del Norte</div>
+                    <div class="testimonio-role">Gerencia de Operaciones</div>
+                </div>
+                <div class="testimonio-card fade-in">
+                    <div class="testimonio-text">
+                        "Excelente servicio ejecutivo con personal altamente capacitado y tecnología de última generación."
+                    </div>
+                    <div class="testimonio-author">Empresa Multinacional</div>
+                    <div class="testimonio-role">Director de Seguridad</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h4>Protegemos lo que más valoras</h4>
+            <p>Con tecnología de última generación y un equipo de profesionales altamente capacitados, garantizamos tu seguridad y la de tus bienes.</p>
+            <a href="#contacto" class="cta-button">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-envelope"></i> contacto@sentinelseguridad.com</p>
+                    <p><i class="fas fa-phone"></i> 664 819 7723</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Ave. Larroque 271, #107, Col. Empleados Federales, Tijuana, B.C.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Servicios</h5>
+                    <p><a href="#">Vigilancia Física</a></p>
+                    <p><a href="#">Torres Sentinel</a></p>
+                    <p><a href="#">Monitoreo C4</a></p>
+                    <p><a href="#">Drones de Vigilancia</a></p>
+                    <p><a href="#">Escoltas Ejecutivas</a></p>
+                </div>
+                <div class="footer-section">
+                    <h5>Tecnología</h5>
+                    <p><a href="#">Plataforma de Reporteo</a></p>
+                    <p><a href="#">IA Predictiva</a></p>
+                    <p><a href="#">App Cliente</a></p>
+                    <p><a href="#">Monitoreo Remoto</a></p>
+                </div>
+                <div class="footer-section">
+                    <h5>Síguenos</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sentinel Seguridad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/526648197723" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 43, 77, 0.98)';
+            } else {
+                header.style.background = 'rgba(0, 43, 77, 0.95)';
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav');
+
+        mobileMenu.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.style.display = 'none';
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

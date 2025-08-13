@@ -1,0 +1,79 @@
+﻿
+Tipo de sitio: Sitio web corporativo institucional, multilingüe
+________________
+
+
+Alcance del Proyecto
+Secciones contempladas (estructura de navegación):
+1. Inicio
+Presentación general de la empresa, tecnologías destacadas, llamado a la acción, video o slider visual.
+2. Quiénes Somos
+Resumen de misión y visión, historia, expansión nacional, presentación del equipo fundador y certificaciones.
+3. Servicios
+Descripción de los servicios principales: vigilancia física, Torres Sentinel, iC5 móviles, monitoreo con IA, drones, etc.
+4. Tecnología
+Explicación de las soluciones tecnológicas utilizadas y diferenciadores clave.
+5. Casos de Éxito / Clientes
+Testimonios de gobiernos municipales, proyectos exitosos, licitaciones y alianzas.
+6. Blog / Noticias
+Espacio para publicar avances, noticias institucionales, artículos sobre seguridad e innovación.
+7. Contacto
+Formulario funcional, ubicación con mapa, WhatsApp directo, integración de redes sociales, teléfonos y correo.
+8. Trabaja con Nosotros (opcional)
+Formulario simple o correo para postulaciones.
+
+
+________________
+
+
+
+
+Características técnicas:
+* Sitio bilingüe (español e inglés) con opción de cambio de idioma
+
+* Diseño responsivo (adaptado a móviles, tablets y escritorio)
+
+* Estilo visual corporativo-tecnológico, moderno y sobrio (gris, azul, negro)
+
+* Integración de contenido multimedia (PDFs, videos, imágenes)
+
+* Formulario de contacto funcional
+
+* Mapa de ubicación con Google Maps
+
+* Integración con redes sociales
+
+* Botón de WhatsApp directo
+
+* Descarga de brochures en PDF
+
+* Optimización básica SEO y velocidad de carga
+
+
+________________
+
+
+Mantenimiento y soporte:
+   * Incluye 1 mes de soporte posterior a la entrega (ajustes menores, monitoreo básico, actualizaciones críticas).
+
+   * El sitio será desarrollado para permitir edición futura por parte del cliente (con editor visual en WordPress).
+
+   * Opcional: se puede ofrecer mantenimiento mensual con costo adicional.
+
+
+________________
+
+
+
+
+No incluye (por ahora):
+      * Portal para clientes con acceso privado
+
+      * Área de firma de contratos
+
+      * E-commerce para renta de equipos
+
+      * Sistema de citas
+
+(Estos módulos pueden desarrollarse en una segunda etapa y cotizarse por separado)
+
