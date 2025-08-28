@@ -131,8 +131,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 43, 77, 0.7), rgba(0, 43, 77, 0.7)), 
-                        url('./Gemini_Generated_Image_58e2v558e2v558e2.jpeg');
-                        /* url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); */
+                        url('resized/webp_output/Gemini_Generated_Image_58e2v558e2v558e2_1920.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -154,6 +153,7 @@
             font-weight: 700;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-transform: uppercase;
         }
 
         .hero p {
@@ -198,8 +198,23 @@
             flex-wrap: wrap;
         }
 
+        .pattern-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(45deg, transparent 48%, rgba(77, 182, 228, 0.03) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(77, 182, 228, 0.03) 50%, transparent 52%);
+            background-size: 60px 60px;
+            z-index: 1;
+        }
+
         /* Diferenciales Tecnológicos */
         .diferenciales {
+            position: relative;
             background: var(--dark-gray);
             padding: 5rem 0;
         }
@@ -215,6 +230,7 @@
             font-weight: 700;
             color: var(--accent-blue);
             margin-bottom: 1rem;
+            text-transform: uppercase;
         }
 
         .section-title p {
@@ -257,6 +273,7 @@
             font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--white);
+            text-transform: uppercase;
         }
 
         .diferencial-card p {
@@ -267,7 +284,7 @@
         /* Quiénes Somos */
         .quienes-somos {
             background: linear-gradient(rgba(0, 43, 77, 0.8), rgba(0, 43, 77, 0.8)),
-                        url('./IMG_0219.png');
+                        url('resized/webp_output/IMG_0219_1920.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -286,6 +303,7 @@
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: var(--accent-blue);
+            text-transform: uppercase;
         }
 
         .quienes-text p {
@@ -449,7 +467,7 @@
         /* CTA Final */
         .cta-final {
             background: linear-gradient(rgba(0, 43, 77, 0.9), rgba(0, 43, 77, 0.9)),
-                        url('./Gemini_Generated_Image_hxfbwdhxfbwdhxfb (1).jpeg');
+                        url('resized/webp_output/Gemini_Generated_Image_hxfbwdhxfbwdhxfb (1)_1920.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -462,6 +480,7 @@
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: var(--accent-blue);
+            text-transform: uppercase;
         }
 
         .cta-final p {
@@ -652,10 +671,10 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#quienes-somos">Quiénes Somos</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#tecnologia">Tecnología</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
@@ -676,14 +695,14 @@
                 <p>En Sentinel Seguridad protegemos lo que más valoras con soluciones integrales de vigilancia y monitoreo. Combinamos personal capacitado, tecnología de última generación e inteligencia artificial para ofrecer seguridad preventiva, trazable y adaptable a cualquier entorno.</p>
                 <div class="hero-buttons">
                     <a href="#contacto" class="cta-button">Solicita una Cotización</a>
-                    <a href="#servicios" class="cta-button secondary">Conoce Nuestras Soluciones</a>
+                    <a href="servicios.html" class="cta-button secondary">Conoce Nuestras Soluciones</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Diferenciales Tecnológicos -->
-    <section id="tecnologia" class="diferenciales">
+    <section id="tecnologia" class="diferenciales pattern-bg">
         <div class="container">
             <div class="section-title">
                 <h3>Diferenciales Tecnológicos</h3>
@@ -876,18 +895,18 @@
                 </div>
                 <div class="footer-section">
                     <h5>Servicios</h5>
-                    <p><a href="#">Vigilancia Física</a></p>
-                    <p><a href="#">Torres Sentinel</a></p>
-                    <p><a href="#">Monitoreo C4</a></p>
-                    <p><a href="#">Drones de Vigilancia</a></p>
-                    <p><a href="#">Escoltas Ejecutivas</a></p>
+                    <p><a href="servicios.html#vigilancia-fisica">Vigilancia Física</a></p>
+                    <p><a href="servicios.html#torres-sentinel">Torres Sentinel</a></p>
+                    <p><a href="servicios.html#monitoreo-ia">Monitoreo con IA</a></p>
+                    <p><a href="servicios.html#drones-vigilancia">Drones de Vigilancia</a></p>
+                    <p><a href="servicios.html#escoltas-guardia">Escoltas Ejecutivas</a></p>
                 </div>
                 <div class="footer-section">
                     <h5>Tecnología</h5>
-                    <p><a href="#">Plataforma de Reporteo</a></p>
-                    <p><a href="#">IA Predictiva</a></p>
-                    <p><a href="#">App Cliente</a></p>
-                    <p><a href="#">Monitoreo Remoto</a></p>
+                    <p><a href="tecnologia.html#plataforma-c4">Plataforma de Reporteo</a></p>
+                    <p><a href="tecnologia.html#ia-predictiva">IA Predictiva</a></p>
+                    <p><a href="tecnologia.html#app-cliente">App Cliente</a></p>
+                    <p><a href="tecnologia.html#monitoreo-c5">Monitoreo Remoto</a></p>
                 </div>
                 <div class="footer-section">
                     <h5>Síguenos</h5>

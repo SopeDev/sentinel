@@ -26,82 +26,7 @@ Imágenes de alta definición, ligeramente oscurecidas con overlays para superpo
 
 Composición enfocada en acción y tecnología (guardias, drones, centros de control, torres de vigilancia).
 
-2. Propuesta de Estructura – Homepage
-1️⃣ Hero Section (pantalla completa)
-
-Fondo: video en loop o imagen dinámica (patrulla, monitoreo C4, drones).
-
-Overlay con degradado azul oscuro semi-transparente.
-
-Título principal: “Tecnología, Precisión y Confianza”.
-
-Subtítulo: breve presentación en una línea.
-
-Botón CTA: “Solicita una Cotización” / “Conoce Nuestras Soluciones”.
-
-2️⃣ Diferenciales Tecnológicos
-
-Fondo oscuro con íconos minimalistas animados (línea y relleno en azul claro).
-
-Presentar las 5 claves:
-
-Plataforma Integral de Reporteo.
-
-Monitoreo estilo C4.
-
-IA y análisis predictivo.
-
-App para cliente.
-
-Drones y equipos de alta gama.
-
-Diseño tipo cards horizontales con icono + texto.
-
-3️⃣ Quiénes Somos (resumen)
-
-Imagen de fondo: centro de monitoreo.
-
-Columna izquierda: título y breve párrafo de presentación.
-
-Columna derecha: puntos destacados (años de experiencia, cobertura nacional, certificaciones).
-
-4️⃣ Servicios Destacados
-
-Grid de 3 o 4 bloques visuales con imagen, título y enlace a página de servicios.
-
-Ejemplos:
-
-Vigilancia Física.
-
-Torres Sentinel.
-
-iC5 Móviles.
-
-Monitoreo con IA.
-
-Drones.
-
-5️⃣ Casos de Éxito / Confianza Institucional
-
-Carrusel con logos de clientes o testimonios cortos.
-
-Fondo gris claro o blanco para variar del tono oscuro.
-
-6️⃣ Llamado a la Acción Final
-
-Fondo fotográfico con overlay azul.
-
-Frase de impacto: “Protegemos lo que más valoras con tecnología de última generación”.
-
-Botón: “Contáctanos”.
-
-7️⃣ Footer
-
-Fondo azul oscuro.
-
-Datos de contacto, redes sociales, WhatsApp directo, menú rápido.
-
-3. Estilo Gráfico y Detalles UI
+2. Estilo Gráfico y Detalles UI
 Botones: Bordes ligeramente redondeados, colores sólidos con hover luminoso en azul claro.
 
 Separadores: Líneas finas o divisores con degradado azul.
@@ -111,16 +36,3 @@ Iconografía: Minimalista y lineal, con acento en azul claro sobre fondo oscuro.
 Animaciones: Fade-in y deslizamientos suaves para dar sensación de alta tecnología.
 
 Overlay de textos: Degradados azul-negro para garantizar contraste.
-
-4. Ejemplo de Flujo Visual
-Impacto inmediato → Hero visual + lema.
-
-Confianza → Diferenciales tecnológicos.
-
-Credibilidad → Quiénes Somos.
-
-Claridad → Servicios principales.
-
-Validación → Casos de éxito.
-
-Acción → CTA final.

@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología - Sentinel Seguridad | Soluciones Inteligentes de Seguridad</title>
+    <meta name="description" content="Descubre la tecnología de vanguardia de Sentinel Seguridad: IA predictiva, monitoreo C4, drones, geofencing y más. Soluciones inteligentes que revolucionan la seguridad privada.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #002B4D;
+            --accent-blue: #4DB6E4;
+            --dark-gray: #1a1a1a;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --gradient-blue: linear-gradient(135deg, #002B4D 0%, #4DB6E4 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 43, 77, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo h1 span {
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 43, 77, 0.8), rgba(0, 43, 77, 0.8)), 
+                        url('resized/webp_output/Gemini_Generated_Image_hc3unhhc3unhhc3u_1920.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(77, 182, 228, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #3da5d4;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(77, 182, 228, 0.4);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--dark-gray);
+        }
+
+        .content-section:nth-child(odd) {
+            background: var(--primary-blue);
+        }
+
+        /* Light Gray Background Section */
+        .content-section.light-gray-bg {
+            background: var(--light-gray);
+        }
+
+        .content-section.light-gray-bg .section-header h3 {
+            color: var(--primary-blue);
+        }
+
+        .content-section.light-gray-bg .section-header p {
+            color: #666;
+        }
+
+
+
+        .content-section.light-gray-bg .tech-text h4 {
+            color: var(--primary-blue);
+        }
+
+
+
+        .content-section.light-gray-bg .tech-text p {
+            color: #1a1a1a;
+        }
+
+        .content-section.light-gray-bg .tech-features li {
+            color: #1a1a1a;
+        }
+
+        .content-section.light-gray-bg .c4-feature h5 {
+            color: var(--primary-blue);
+        }
+
+        .content-section.light-gray-bg .c4-feature p {
+            color: #1a1a1a;
+        }
+
+        .content-section.light-gray-bg .c4-feature i {
+            color: var(--accent-blue);
+        }
+
+        /* White Background Section */
+        .content-section.white-bg {
+            background: #ffffff;
+        }
+
+        .pattern-bg {
+            position: relative;
+            z-index: 1;
+        }
+
+        .pattern-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(45deg, transparent 48%, rgba(77, 182, 228, 0.03) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(77, 182, 228, 0.03) 50%, transparent 52%);
+            background-size: 60px 60px;
+            z-index: -1;
+        }
+
+        /* Digital Grid with Data Points Pattern for Cutting-Edge Technology */
+        .data-grid-bg {
+            position: relative;
+            z-index: 1;
+        }
+
+        .data-grid-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                /* Main grid lines - horizontal and vertical */
+                linear-gradient(90deg, transparent 49%, rgba(77, 182, 228, 0.03) 50%, transparent 51%),
+                linear-gradient(0deg, transparent 49%, rgba(77, 182, 228, 0.03) 50%, transparent 51%);
+            background-size: 100px 100px;
+            z-index: -1;
+        }
+
+        .data-grid-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                /* Data points at grid intersections only */
+                radial-gradient(circle at 25% 25%, rgba(77, 182, 228, 0.08) 3px, transparent 4px),
+                radial-gradient(circle at 75% 75%, rgba(77, 182, 228, 0.08) 3px, transparent 4px);
+            background-size: 200px 200px, 200px 200px, 150px 150px;
+            background-position: 0 0, 0 0, 0 0;
+            z-index: -1;
+        }
+
+        .matrix-rain-bg {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Matrix Rain Pattern for AI and Computing Technology */
+        .matrix-rain-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                /* Vertical streams of digital characters - using CSS to simulate falling elements */
+                linear-gradient(90deg, transparent 0%, rgba(77, 182, 228, 0.06) 0.5%, transparent 1%),
+                linear-gradient(90deg, transparent 0%, rgba(77, 182, 228, 0.05) 0.3%, transparent 0.6%),
+                linear-gradient(90deg, transparent 0%, rgba(77, 182, 228, 0.08) 0.7%, transparent 1.2%),
+                linear-gradient(90deg, transparent 0%, rgba(77, 182, 228, 0.07) 0.4%, transparent 0.9%),
+                linear-gradient(90deg, transparent 0%, rgba(77, 182, 228, 0.06) 0.6%, transparent 1.1%);
+            background-size: 120px 200px, 180px 300px, 150px 250px, 200px 350px, 160px 280px;
+            background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+            animation: matrix-fall 6s linear infinite;
+            z-index: -1;
+        }
+
+        .matrix-rain-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                /* Additional digital streams with different timing */
+                linear-gradient(90deg, transparent 0%, rgba(77, 182, 228, 0.06) 0.2%, transparent 0.5%),
+                linear-gradient(90deg, transparent 0%, rgba(77, 182, 228, 0.08) 0.8%, transparent 1.3%),
+                linear-gradient(90deg, transparent 0%, rgba(77, 182, 228, 0.07) 0.5%, transparent 1%);
+            background-size: 140px 320px, 170px 280px, 190px 360px;
+            background-position: 0 0, 0 0, 0 0;
+            animation: matrix-fall 8s linear infinite 3s;
+            z-index: -1;
+        }
+
+        /* Matrix rain animation */
+        @keyframes matrix-fall {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        .content-section.white-bg .section-header h3 {
+            color: var(--primary-blue);
+        }
+
+        .content-section.white-bg .section-header p {
+            color: #666;
+        }
+
+
+
+        .content-section.white-bg .tech-text h4 {
+            color: var(--primary-blue);
+        }
+
+
+
+        .content-section.white-bg .tech-text p {
+            color: #1a1a1a;
+        }
+
+        .content-section.white-bg .tech-features li {
+            color: #1a1a1a;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #e0e0e0;
+        }
+
+        /* Tech Grid Layout */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        #ia-predictiva .tech-grid {
+            align-items: center;
+        }
+
+
+
+        .tech-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-text h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+        }
+
+        .tech-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        /* Full width tech-text when not in grid */
+        .tech-text:not(.tech-grid .tech-text) {
+            width: 100%;
+            max-width: none;
+        }
+
+        .tech-features {
+            list-style: none;
+        }
+
+        .tech-features li {
+            padding: 0.5rem 0;
+            color: #e0e0e0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .tech-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+        }
+
+        /* Tech Visual Elements */
+        .tech-visual {
+            position: relative;
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: rgba(77, 182, 228, 0.1);
+            border: 2px solid rgba(77, 182, 228, 0.3);
+            z-index: 1;
+        }
+
+        .tech-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* C4 Platform Section */
+        .c4-platform {
+            background: rgba(77, 182, 228, 0.05);
+            border-radius: 20px;
+            border-top: 4px solid var(--accent-blue);
+            padding: 3rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .c4-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .c4-feature {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(77, 182, 228, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(77, 182, 228, 0.2);
+        }
+
+        .c4-feature i {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .c4-feature h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .c4-feature p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* AI Flow Diagram */
+        .ai-flow {
+            position: relative;
+            height: 400px;
+            background: rgba(77, 182, 228, 0.05);
+            border-radius: 15px;
+            border: 2px solid rgba(77, 182, 228, 0.3);
+            overflow: hidden;
+        }
+
+        .ai-flow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+        }
+
+        .ai-node {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(77, 182, 228, 0.4);
+        }
+
+        .ai-node:nth-child(1) { top: 20%; left: 10%; }
+        .ai-node:nth-child(2) { top: 20%; right: 10%; }
+        .ai-node:nth-child(3) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .ai-node:nth-child(4) { bottom: 20%; left: 10%; }
+        .ai-node:nth-child(5) { bottom: 20%; right: 10%; }
+
+        .ai-connection {
+            position: absolute;
+            height: 2px;
+            background: var(--accent-blue);
+            transform-origin: left center;
+        }
+
+        .ai-connection:nth-child(6) { width: 25%; top: 32%; left: 24%; transform: rotate(23deg); }
+        .ai-connection:nth-child(7) { width: 25%; top: 32%; right: 0%; transform: rotate(155deg); }
+        .ai-connection:nth-child(8) { width: 25%; top: 53%; left: 45%; transform: rotate(155deg); }
+        .ai-connection:nth-child(9) { width: 25%; top: 53%; right: 22%; transform: rotate(23deg); }
+
+        /* Cloud Platform */
+        .cloud-platform {
+            margin: 2rem 0;
+        }
+
+        .cloud-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .cloud-feature {
+            background: rgba(77, 182, 228, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(77, 182, 228, 0.2);
+        }
+
+        .cloud-feature i {
+            font-size: 2rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .cloud-feature h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .cloud-feature p {
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.4;
+        }
+
+        /* Cloud Timeline - Horizontal Line Concept */
+        .cloud-platform {
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .cloud-timeline {
+            position: relative;
+            display: flex;
+            max-width: 100%;
+            margin: 2rem 0;
+            padding: 2rem 0;
+            z-index: 1;
+        }
+
+        .cloud-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 54%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue), var(--primary-blue));
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+
+        .cloud-timeline-item {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .cloud-timeline-icon {
+            background: var(--primary-blue);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            border: 4px solid var(--accent-blue);
+            box-shadow: 0 4px 15px rgba(77, 182, 228, 0.3);
+        }
+
+        .cloud-timeline-icon i {
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .cloud-timeline-content h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-blue);
+        }
+
+        .cloud-timeline-content p {
+            font-size: 0.85rem;
+            color: #e0e0e0;
+            line-height: 1.4;
+        }
+
+        /* Cloud Background Elements for Reporteo Section */
+        .content-section#reporteo-nube {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .content-section#reporteo-nube::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 270px;
+            height: 180px;
+            background: rgba(77, 182, 228, 0.05);
+            border-radius: 135px 135px 135px 135px;
+            z-index: -1;
+        }
+
+        .content-section#reporteo-nube::after {
+            content: '';
+            position: absolute;
+            bottom: 15%;
+            left: 8%;
+            width: 225px;
+            height: 135px;
+            background: rgba(77, 182, 228, 0.04);
+            border-radius: 112px 112px 112px 112px;
+            z-index: 1;
+        }
+
+
+        .content-section#reporteo-nube .tech-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-section#reporteo-nube .tech-text::before {
+            content: '';
+            position: absolute;
+            top: 60%;
+            left: 5%;
+            width: 160px;
+            height: 105px;
+            background: rgba(77, 182, 228, 0.025);
+            border-radius: 80px 80px 80px 80px;
+            z-index: 1;
+        }
+
+        .content-section#reporteo-nube .tech-text::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            width: 135px;
+            height: 90px;
+            background: rgba(77, 182, 228, 0.03);
+            border-radius: 67px 67px 67px 67px;
+            z-index: 1;
+        }
+
+        .content-section#reporteo-nube .section-header {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Additional floating cloud elements */
+        .content-section#reporteo-nube .section-header::before {
+            content: '';
+            position: absolute;
+            top: 5%;
+            left: 25%;
+            width: 110px;
+            height: 75px;
+            background: rgba(77, 182, 228, 0.02);
+            border-radius: 55px 55px 55px 55px;
+            z-index: 1;
+        }
+
+        .content-section#reporteo-nube .section-header::after {
+            content: '';
+            position: absolute;
+            top: 15%;
+            right: 30%;
+            width: 90px;
+            height: 60px;
+            background: rgba(77, 182, 228, 0.025);
+            border-radius: 45px 45px 45px 45px;
+            z-index: 1;
+        }
+
+        /* App Mockup */
+        .app-mockup {
+            background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid rgba(77, 182, 228, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-mockup {
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .app-screen {
+            background: var(--dark-gray);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            border: 1px solid rgba(77, 182, 228, 0.2);
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(77, 182, 228, 0.2);
+        }
+
+        .app-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: var(--accent-blue);
+        }
+
+        .app-status {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4CAF50;
+        }
+
+        .status-indicator.warning { background: #FF9800; }
+        .status-indicator.danger { background: #F44336; }
+
+        .app-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .app-item {
+            background: rgba(77, 182, 228, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(77, 182, 228, 0.2);
+        }
+
+        .app-item h6 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .app-item p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Advanced Tech Section */
+        .advanced-tech {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-card {
+            background: rgba(77, 182, 228, 0.1);
+            border: 1px solid rgba(77, 182, 228, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .tech-card {
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-card h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+        }
+
+        .tech-card p {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(0, 43, 77, 0.9), rgba(0, 43, 77, 0.9)),
+                        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--accent-blue);
+            color: var(--white);
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #3da5d4;
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(77, 182, 228, 0.3);
+            color: #ccc;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-header h3 {
+                font-size: 2.5rem;
+            }
+
+            .c4-grid, .cloud-features {
+                grid-template-columns: 1fr;
+            }
+
+            .cloud-timeline {
+                padding: 1rem 0;
+            }
+
+            .cloud-timeline-item {
+                width: 45%;
+                margin: 0 2.5%;
+                margin-bottom: 2rem;
+            }
+
+            .cloud-timeline::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-header h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="icono.png" alt="Sentinel Seguridad Logo">
+                    <h1>SENTINEL <span>SEGURIDAD</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Tecnología de Vanguardia</h2>
+                <p>Soluciones inteligentes que revolucionan la seguridad privada con IA predictiva, monitoreo C4, drones de última generación y plataformas en la nube.</p>
+                <a href="#plataforma-c4" class="cta-button">Descubre Nuestra Tecnología</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plataforma C4 -->
+    <section id="plataforma-c4" class="content-section light-gray-bg">
+        <div class="container">
+            <div class="section-header">
+                <h3>Plataforma Integral C4</h3>
+                <p>Centro de control propio con videovigilancia inteligente, respuesta remota, geolocalización y conexión a IA para detección de amenazas</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-text">
+                    <h4>Monitoreo Inteligente 24/7</h4>
+                    <p>Nuestra plataforma C4 representa el corazón tecnológico de Sentinel Seguridad, integrando múltiples sistemas de seguridad en una sola interfaz unificada.</p>
+                    <p>Con capacidades de videovigilancia inteligente, análisis predictivo y respuesta automatizada, proporcionamos una protección integral que anticipa amenazas antes de que se materialicen.</p>
+                    <ul class="tech-features">
+                        <li>Videovigilancia inteligente con IA</li>
+                        <li>Respuesta remota automatizada</li>
+                        <li>Geolocalización en tiempo real</li>
+                        <li>Detección predictiva de amenazas</li>
+                        <li>Integración multi-plataforma</li>
+                    </ul>
+                </div>
+                <div class="tech-visual">
+                    <img src="resized/webp_output/Gemini_Generated_Image_lrl40dlrl40dlrl4_1920.webp" alt="Centro de Control C4">
+                </div>
+            </div>
+            
+            <div class="c4-platform">
+                <h4 style="text-align: center; margin-bottom: 2rem; color: var(--accent-blue);">Componentes Clave de la Plataforma</h4>
+                <div class="c4-grid">
+                    <div class="c4-feature">
+                        <i class="fas fa-video"></i>
+                        <h5>Videovigilancia IA</h5>
+                        <p>Análisis inteligente de video en tiempo real</p>
+                    </div>
+                    <div class="c4-feature">
+                        <i class="fas fa-satellite-dish"></i>
+                        <h5>Comunicación Satelital</h5>
+                        <p>Conectividad redundante para máxima confiabilidad</p>
+                    </div>
+                    <div class="c4-feature">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h5>Geolocalización</h5>
+                        <p>Seguimiento preciso de unidades móviles</p>
+                    </div>
+                    <div class="c4-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h5>Respuesta Automatizada</h5>
+                        <p>Protocolos de emergencia activados por IA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IA Predictiva -->
+    <section id="ia-predictiva" class="content-section matrix-rain-bg">
+        <div class="container">
+            <!-- <div class="section-header">
+                <h3>IA y Análisis Predictivo</h3>
+                <p>Herramientas que permiten anticipar riesgos y automatizar protocolos de respuesta ante amenazas emergentes</p>
+            </div> -->
+            <div class="tech-grid">
+                <div class="tech-text">
+                    <h4>Inteligencia Artificial Avanzada</h4>
+                    <p>Nuestros algoritmos de IA analizan patrones de comportamiento, movimientos sospechosos y anomalías en tiempo real, permitiendo una respuesta proactiva antes de que ocurran incidentes.</p>
+                    <p>La tecnología predictiva aprende continuamente de cada evento, mejorando la precisión de detección y reduciendo falsos positivos.</p>
+                    <ul class="tech-features">
+                        <li>Análisis de patrones de comportamiento</li>
+                        <li>Detección de anomalías en tiempo real</li>
+                        <li>Aprendizaje automático continuo</li>
+                        <li>Protocolos de respuesta automatizados</li>
+                        <li>Reducción de falsos positivos</li>
+                    </ul>
+                </div>
+                <div class="ai-flow">
+                    <div class="ai-node">📊</div>
+                    <div class="ai-node">🔍</div>
+                    <div class="ai-node">🤖</div>
+                    <div class="ai-node">⚡</div>
+                    <div class="ai-node">🛡️</div>
+                    <div class="ai-connection"></div>
+                    <div class="ai-connection"></div>
+                    <div class="ai-connection"></div>
+                    <div class="ai-connection"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plataforma de Reporteo -->
+    <section id="reporteo-nube" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Plataforma de Reporteo en la Nube</h3>
+                <p>Software en la nube para control de rondines, bitácoras digitales, evaluación de KPIs y gestión de incidencias en tiempo real</p>
+            </div>
+            <div class="cloud-platform">
+                <!-- <h4 style="text-align: center; margin-bottom: 2rem; color: var(--accent-blue);">Características de la Plataforma</h4> -->
+                <div class="cloud-timeline">
+                    <div class="cloud-timeline-item">
+                        <div class="cloud-timeline-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="cloud-timeline-content">
+                            <h5>Almacenamiento Seguro</h5>
+                            <p>Datos encriptados en la nube</p>
+                        </div>
+                    </div>
+                    <div class="cloud-timeline-item">
+                        <div class="cloud-timeline-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="cloud-timeline-content">
+                            <h5>Acceso Móvil</h5>
+                            <p>Disponible en cualquier dispositivo</p>
+                        </div>
+                    </div>
+                    <div class="cloud-timeline-item">
+                        <div class="cloud-timeline-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="cloud-timeline-content">
+                            <h5>Analytics Avanzados</h5>
+                            <p>Reportes y métricas detalladas</p>
+                        </div>
+                    </div>
+                    <div class="cloud-timeline-item">
+                        <div class="cloud-timeline-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="cloud-timeline-content">
+                            <h5>Seguridad Máxima</h5>
+                            <p>Protocolos de seguridad empresarial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-text">
+                <h4>Gestión Digital Integral</h4>
+                <div class="tech-grid">
+                    <div>
+                        <p>Nuestra plataforma en la nube centraliza toda la información operativa, proporcionando visibilidad completa del estado de seguridad en tiempo real.</p>
+                        <p>Desde dispositivos móviles hasta computadoras de escritorio, el acceso es instantáneo y seguro, permitiendo una supervisión continua sin interrupciones.</p>
+                    </div>
+                    <ul class="tech-features">
+                        <li>Control de rondines digitalizado</li>
+                        <li>Bitácoras electrónicas en tiempo real</li>
+                        <li>Evaluación automática de KPIs</li>
+                        <li>Gestión de incidencias centralizada</li>
+                        <li>Acceso multiplataforma seguro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App para Clientes -->
+    <section id="app-cliente" class="content-section pattern-bg">
+        <div class="container">
+            <div class="section-header">
+                <h3>App para Clientes</h3>
+                <p>Aplicación personalizada para visualizar estatus de vigilancia, incidentes y comunicación directa con supervisores</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-text">
+                    <h4>Control Total en tus Manos</h4>
+                    <p>Nuestra aplicación móvil pone el control de la seguridad directamente en manos de nuestros clientes, proporcionando transparencia total y comunicación instantánea.</p>
+                    <p>Recibe alertas en tiempo real, visualiza el estado de tus instalaciones y comunícate directamente con el personal de seguridad cuando lo necesites.</p>
+                    <ul class="tech-features">
+                        <li>Estado de vigilancia en tiempo real</li>
+                        <li>Alertas y notificaciones instantáneas</li>
+                        <li>Comunicación directa con supervisores</li>
+                        <li>Historial de incidentes completo</li>
+                        <li>Reportes personalizados</li>
+                    </ul>
+                </div>
+                <div class="app-mockup">
+                    <div class="app-screen">
+                        <div class="app-header">
+                            <div class="app-title">Sentinel Security</div>
+                            <div class="app-status">
+                                <div class="status-indicator"></div>
+                                <div class="status-indicator warning"></div>
+                                <div class="status-indicator danger"></div>
+                            </div>
+                        </div>
+                        <div class="app-content">
+                            <div class="app-item">
+                                <h6>Estado General</h6>
+                                <p>Vigilancia Activa</p>
+                            </div>
+                            <div class="app-item">
+                                <h6>Personal</h6>
+                                <p>3 Guardias Activos</p>
+                            </div>
+                            <div class="app-item">
+                                <h6>Último Incidente</h6>
+                                <p>Hace 2 horas</p>
+                            </div>
+                            <div class="app-item">
+                                <h6>Próxima Ronda</h6>
+                                <p>En 15 min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnología de Punta -->
+    <section class="content-section data-grid-bg">
+        <div class="container">
+            <div class="section-header">
+                <h3>Tecnología de Punta</h3>
+                <p>Drones, geofencing, cámaras infrarrojo, sensores y equipos de última generación para vigilancia integral</p>
+            </div>
+            <div class="advanced-tech">
+                <div class="tech-card">
+                    <img src="resized/webp_output/daniel-charles-hextall-f0bXHOVrKRs-unsplash.jpg" alt="Drones de Vigilancia">
+                    <h4>Drones de Vigilancia</h4>
+                    <p>Vigilancia aérea con cámaras de alta definición, geofencing automático y transmisión en tiempo real para cobertura total del perímetro.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="resized/webp_output/SENTINEL-07_1920.webp" alt="Torres Sentinel">
+                    <h4>Torres Sentinel Móviles</h4>
+                    <p>Sistemas autónomos con energía solar, cámaras PTZ de alta definición, conectividad 4G y disuasión activa con luces estroboscópicas.</p>
+                </div>
+                <div class="tech-card">
+                    <img src="resized/webp_output/SENTINEL-22_1920.webp" alt="iC5 Móviles">
+                    <h4>iC5 Móviles</h4>
+                    <p>Unidades de respuesta rápida equipadas con GPS, sistemas de comunicación avanzados y protocolos de reacción automatizados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monitoreo Remoto C5 -->
+    <section id="monitoreo-c5" class="content-section white-bg">
+        <div class="container">
+            <div class="section-header">
+                <h3>Monitoreo Remoto C5</h3>
+                <p>Monitoreo y comunicación con tecnología de punta 24/7, conexión con cámaras de alta calidad y sistemas de alerta temprana</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-text">
+                    <h4>Centro de Control Avanzado</h4>
+                    <p>Nuestro centro de monitoreo C5 opera las 24 horas del día, los 7 días de la semana, proporcionando supervisión continua y respuesta inmediata ante cualquier situación.</p>
+                    <p>Con protocolos de seguridad internacionales y tecnología de proveedores líderes mundiales, garantizamos la máxima confiabilidad en la protección de tus activos.</p>
+                    <ul class="tech-features">
+                        <li>Operación 24/7 sin interrupciones</li>
+                        <li>Cámaras de ultra alta definición</li>
+                        <li>Sistemas de alerta temprana</li>
+                        <li>Protocolos internacionales de seguridad</li>
+                        <li>Respuesta automatizada inmediata</li>
+                    </ul>
+                </div>
+                <div class="tech-visual">
+                    <img src="resized/webp_output/Gemini_Generated_Image_386wvj386wvj386w_1920.webp" alt="Centro de Monitoreo C5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h3>¿Listo para Revolucionar tu Seguridad?</h3>
+            <p>Descubre cómo nuestra tecnología de vanguardia puede proteger tu negocio con soluciones inteligentes y predictivas.</p>
+            <a href="#contacto" class="cta-button">Solicita una Demostración</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-envelope"></i> contacto@sentinelseguridad.com</p>
+                    <p><i class="fas fa-phone"></i> 664 819 7723</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Ave. Larroque 271, #107, Col. Empleados Federales, Tijuana, B.C.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Servicios</h5>
+                    <p><a href="servicios.html#vigilancia-fisica">Vigilancia Física</a></p>
+                    <p><a href="servicios.html#torres-sentinel">Torres Sentinel</a></p>
+                    <p><a href="servicios.html#ic5-moviles">iC5 Móviles</a></p>
+                    <p><a href="servicios.html#monitoreo-ia">Monitoreo con IA</a></p>
+                    <p><a href="servicios.html#drones-vigilancia">Drones de Vigilancia</a></p>
+                    <p><a href="servicios.html#escoltas-guardia">Escoltas Ejecutivas</a></p>
+                </div>
+                <div class="footer-section">
+                    <h5>Tecnología</h5>
+                    <p><a href="#plataforma-c4">Plataforma C4</a></p>
+                    <p><a href="#ia-predictiva">IA Predictiva</a></p>
+                    <p><a href="#reporteo-nube">Reporteo en la Nube</a></p>
+                    <p><a href="#app-cliente">App Cliente</a></p>
+                </div>
+                <div class="footer-section">
+                    <h5>Síguenos</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sentinel Seguridad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/526648197723" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 43, 77, 0.98)';
+            } else {
+                header.style.background = 'rgba(0, 43, 77, 0.95)';
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav');
+
+        mobileMenu.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.style.display = 'none';
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
