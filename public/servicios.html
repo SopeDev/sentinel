@@ -153,6 +153,7 @@
             font-weight: 700;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-transform: uppercase;
         }
 
         .hero p {
@@ -167,7 +168,7 @@
             color: var(--white);
             padding: 15px 30px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 0;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
@@ -352,13 +353,46 @@
         }
 
         /* CTA Section */
+        /* Closing Section */
+        .closing-section {
+            background: var(--primary-blue);
+            padding: 5rem 0;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .closing-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .closing-icon {
+            margin-bottom: 2rem;
+        }
+
+        .closing-icon i {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            opacity: 0.8;
+        }
+
+        .closing-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
         .cta-section {
             background: linear-gradient(rgba(0, 43, 77, 0.9), rgba(0, 43, 77, 0.9)),
                         url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             padding: 5rem 0;
-            text-align: center;
+            text-align: left;
         }
 
         .cta-section h3 {
@@ -374,6 +408,191 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .cta-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .cta-text {
+            color: var(--white);
+        }
+
+        .cta-text h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .cta-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-contact-info {
+            margin-top: 2rem;
+        }
+
+        .cta-contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-contact-info i {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+        }
+
+        .phone-number {
+            font-size: 1.3rem !important;
+            font-weight: 600;
+        }
+
+        .phone-number a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .phone-number a:hover {
+            color: var(--white);
+            border-bottom-color: var(--white);
+        }
+
+        .support-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(77, 182, 228, 0.2);
+            color: var(--white);
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 0;
+            border: 1px solid var(--accent-blue);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .support-button:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .cta-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-form h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 2px rgba(77, 182, 228, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            flex-direction: row !important;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-bottom: 0 !important;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+        }
+
+        .privacy-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-blue);
+        }
+
+        .privacy-link:hover {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .submit-button {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-button:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 43, 77, 0.3);
         }
 
         /* Footer */
@@ -516,6 +735,32 @@
             .service-text h3 {
                 font-size: 2.5rem;
             }
+
+            .closing-content p {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .closing-icon i {
+                font-size: 2.5rem;
+            }
+
+            .cta-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .cta-text h3 {
+                font-size: 2rem;
+            }
+
+            .cta-form {
+                padding: 2rem;
+            }
+
+            .cta-form h5 {
+                font-size: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -533,6 +778,30 @@
 
             .service-icon {
                 font-size: 5rem;
+            }
+
+            .closing-content p {
+                font-size: 1rem;
+            }
+
+            .closing-icon i {
+                font-size: 2rem;
+            }
+
+            .cta-text h3 {
+                font-size: 1.8rem;
+            }
+
+            .cta-form {
+                padding: 1.5rem;
+            }
+
+            .cta-form h5 {
+                font-size: 1.3rem;
+            }
+
+            .phone-number {
+                font-size: 1.1rem !important;
             }
         }
     </style>
@@ -552,7 +821,9 @@
                         <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                         <li><a href="servicios.html">Servicios</a></li>
                         <li><a href="tecnologia.html">Tecnología</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="casos-exito.html">Casos de Éxito</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav>
                 <div class="mobile-menu">
@@ -568,8 +839,8 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Servicios de Seguridad</h2>
-                <p>Soluciones tecnológicas integrales diseñadas para proteger personas, bienes e instalaciones con la más avanzada tecnología de vigilancia y monitoreo.</p>
+                <h2>Seguridad del Futuro</h2>
+                <p>Revolucionamos la protección con inteligencia artificial, monitoreo predictivo y tecnología de vanguardia que anticipa amenazas antes de que ocurran.</p>
                 <a href="#contacto" class="cta-button">Solicita una Cotización</a>
             </div>
         </div>
@@ -749,12 +1020,71 @@
         </div>
     </section>
 
+    <!-- Closing Section -->
+    <section class="closing-section">
+        <div class="container">
+            <div class="closing-content">
+                <div class="closing-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <p>En Sentinel Seguridad, creamos ecosistemas de seguridad completos que combinan tecnología de vanguardia, personal altamente capacitado y protocolos probados. Desde vigilancia física hasta inteligencia artificial y monitoreo aéreo, cada servicio trabaja en sinergia para garantizar protección integral las 24 horas del día.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h3>¿Necesitas Protección Integral?</h3>
-            <p>Nuestros servicios están diseñados para adaptarse a tus necesidades específicas. Contáctanos para una evaluación personalizada de seguridad.</p>
-            <a href="#contacto" class="cta-button">Solicita una Evaluación</a>
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h3>¿Necesitas Protección Integral?</h3>
+                    <p>Nuestros servicios están diseñados para adaptarse a tus necesidades específicas. Con tecnología de última generación y un equipo de profesionales altamente capacitados, garantizamos tu seguridad y la de tus bienes.</p>
+                    <div class="cta-contact-info">
+                        <p><i class="fas fa-phone"></i> Habla directamente con un profesional de Sentinel</p>
+                        <p class="phone-number">Llama al <a href="tel:+526648197723">664 819 7723</a></p>
+                        <a href="https://wa.me/526648197723" class="support-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Soporte al Cliente
+                        </a>
+                    </div>
+                </div>
+                <div class="cta-form">
+                    <h5>Contáctanos</h5>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa / Organización</label>
+                            <input type="text" id="empresa" name="empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <input type="text" id="asunto" name="asunto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="privacidad" required>
+                                <span class="checkmark"></span>
+                                Acepto la <a href="#" class="privacy-link">Política de Privacidad</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Información</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -776,6 +1106,9 @@
                     <p><a href="#monitoreo-ia">Monitoreo con IA</a></p>
                     <p><a href="#drones-vigilancia">Drones de Vigilancia</a></p>
                     <p><a href="#escoltas-guardia">Escoltas Ejecutivas</a></p>
+                    <p><a href="casos-exito.html">Casos de Éxito</a></p>
+                    <p><a href="blog.html">Blog</a></p>
+                    <p><a href="contacto.html">Contacto</a></p>
                 </div>
                 <div class="footer-section">
                     <h5>Tecnología</h5>

@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Sentinel Seguridad | Formulario, Ubicación y Información de Contacto</title>
+    <meta name="description" content="Contacta con Sentinel Seguridad. Formulario funcional, ubicación con mapa, WhatsApp directo, teléfonos y correo. Estamos en Tijuana, B.C.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+
+    
+    <style>
+        :root {
+            --primary-blue: #002B4D;
+            --accent-blue: #4DB6E4;
+            --dark-gray: #1a1a1a;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --gradient-blue: linear-gradient(135deg, #002B4D 0%, #4DB6E4 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 43, 77, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo h1 span {
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 55vh;
+            background: linear-gradient(rgba(0, 43, 77, 0.8), rgba(0, 43, 77, 0.8)), 
+                        url('resized/webp_output/SENTINEL-28_1920.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Contact Content */
+        .contact-content {
+            background: var(--white);
+            color: var(--dark-gray);
+            padding: 5rem 0;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+
+        /* Contact Form */
+        .contact-form-section {
+            background: var(--light-gray);
+            border-radius: 0;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 2px rgba(77, 182, 228, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            flex-direction: row !important;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-bottom: 0 !important;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+        }
+
+        .privacy-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-blue);
+        }
+
+        .privacy-link:hover {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .submit-button {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-button:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 43, 77, 0.3);
+        }
+
+        .form-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .form-description {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.half {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 0;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(77, 182, 228, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-select {
+            cursor: pointer;
+        }
+
+        .form-button {
+            background: var(--accent-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(77, 182, 228, 0.3);
+        }
+
+        .form-button:hover {
+            background: #3da5d4;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(77, 182, 228, 0.4);
+        }
+
+        .form-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Contact Info */
+        .contact-info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--light-gray);
+            border-radius: 0;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .contact-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .contact-card-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item-content {
+            flex: 1;
+        }
+
+        .contact-item-label {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-item-value {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        .contact-item-value a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item-value a:hover {
+            color: #3da5d4;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: var(--light-gray);
+            border-radius: 0;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .map-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Social Media */
+        .social-section {
+            background: var(--light-gray);
+            border-radius: 0;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .social-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 0;
+            text-decoration: none;
+            color: var(--dark-gray);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .social-link.facebook:hover {
+            background: #1877F2;
+            color: var(--white);
+        }
+
+        .social-link.twitter:hover {
+            background: #1DA1F2;
+            color: var(--white);
+        }
+
+        .social-link.linkedin:hover {
+            background: #0077B5;
+            color: var(--white);
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: var(--white);
+        }
+
+        .social-link-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .social-link.facebook .social-link-icon {
+            background: #1877F2;
+            color: var(--white);
+        }
+
+        .social-link.twitter .social-link-icon {
+            background: #1DA1F2;
+            color: var(--white);
+        }
+
+        .social-link.linkedin .social-link-icon {
+            background: #0077B5;
+            color: var(--white);
+        }
+
+        .social-link.instagram .social-link-icon {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: var(--white);
+        }
+
+        .social-link-text {
+            font-weight: 600;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(77, 182, 228, 0.3);
+            color: #ccc;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Form Success/Error Messages */
+        .form-message {
+            padding: 1rem;
+            border-radius: 0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-group.half {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-section {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .form-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-form-section {
+                padding: 1.5rem;
+            }
+
+            .contact-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="icono.png" alt="Sentinel Seguridad Logo">
+                    <h1>SENTINEL <span>SEGURIDAD</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="casos-exito.html">Casos de Éxito</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Contacto</h2>
+                <p>Estamos aquí para ayudarte. Contáctanos para una consulta personalizada y descubre cómo podemos proteger lo que más te importa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="contact-form-section fade-in">
+                    <h3 class="form-title">Envíanos un Mensaje</h3>
+                    <p class="form-description">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas para discutir tus necesidades de seguridad.</p>
+                    
+                    <div class="form-message success" id="success-message">
+                        ¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.
+                    </div>
+                    
+                    <div class="form-message error" id="error-message">
+                        Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+                    </div>
+
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa / Organización</label>
+                            <input type="text" id="empresa" name="empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <input type="text" id="asunto" name="asunto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="privacidad" required>
+                                <span class="checkmark"></span>
+                                Acepto la <a href="#" class="privacy-link">Política de Privacidad</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Información</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-section">
+                    <!-- Main Contact Card -->
+                    <div class="contact-card fade-in">
+                        <div class="contact-card-header">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4 class="contact-card-title">Información de Contacto</h4>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-item-content">
+                                    <div class="contact-item-label">Teléfono Principal</div>
+                                    <div class="contact-item-value">
+                                        <a href="tel:+526648197723">664 819 7723</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-item-content">
+                                    <div class="contact-item-label">Email</div>
+                                    <div class="contact-item-value">
+                                        <a href="mailto:contacto@sentinelseguridad.com">contacto@sentinelseguridad.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-item-content">
+                                    <div class="contact-item-label">Dirección</div>
+                                    <div class="contact-item-value">
+                                        Ave. Larroque 271, #107<br>
+                                        Col. Empleados Federales<br>
+                                        Tijuana, B.C., México
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-item-content">
+                                    <div class="contact-item-label">Horarios de Atención</div>
+                                    <div class="contact-item-value">
+                                        Lunes - Viernes: 8:00 AM - 6:00 PM<br>
+                                        Sábados: 9:00 AM - 2:00 PM<br>
+                                        <strong>Emergencias: 24/7</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Card -->
+                    <div class="contact-card fade-in">
+                        <div class="contact-card-header">
+                            <div class="contact-card-icon" style="background: #25D366;">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h4 class="contact-card-title">WhatsApp Directo</h4>
+                        </div>
+                        <div class="contact-details">
+                            <p style="color: #666; margin-bottom: 1rem;">Para consultas rápidas y atención inmediata, contáctanos por WhatsApp:</p>
+                            <a href="https://wa.me/526648197723?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20Sentinel%20Seguridad" 
+                               class="form-button" 
+                               style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; background: #25D366; width: 100%; justify-content: center;"
+                               target="_blank">
+                                <i class="fab fa-whatsapp"></i> Chatear por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section fade-in">
+                <h3 class="map-title">Nuestra Ubicación</h3>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d353.5376553293876!2d-117.03031578921964!3d32.54120823071342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d948fe79b47ff1%3A0x11ec7756b85ad4a8!2sEstaci%C3%B3n%20Federal!5e0!3m2!1sen!2smx!4v1756925582846!5m2!1sen!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="social-section fade-in">
+                <h3 class="social-title">Síguenos en Redes Sociales</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook">
+                        <div class="social-link-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="social-link-text">Facebook</div>
+                    </a>
+                    <a href="#" class="social-link twitter">
+                        <div class="social-link-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="social-link-text">Twitter</div>
+                    </a>
+                    <a href="#" class="social-link linkedin">
+                        <div class="social-link-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="social-link-text">LinkedIn</div>
+                    </a>
+                    <a href="#" class="social-link instagram">
+                        <div class="social-link-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social-link-text">Instagram</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-envelope"></i> contacto@sentinelseguridad.com</p>
+                    <p><i class="fas fa-phone"></i> 664 819 7723</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Ave. Larroque 271, #107, Col. Empleados Federales, Tijuana, B.C.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Servicios</h5>
+                    <p><a href="servicios.html#vigilancia-fisica">Vigilancia Física</a></p>
+                    <p><a href="servicios.html#torres-sentinel">Torres Sentinel</a></p>
+                    <p><a href="servicios.html#monitoreo-ia">Monitoreo con IA</a></p>
+                    <p><a href="servicios.html#drones-vigilancia">Drones de Vigilancia</a></p>
+                    <p><a href="servicios.html#escoltas-guardia">Escoltas Ejecutivas</a></p>
+                </div>
+                <div class="footer-section">
+                    <h5>Tecnología</h5>
+                    <p><a href="tecnologia.html#plataforma-c4">Plataforma de Reporteo</a></p>
+                    <p><a href="tecnologia.html#ia-predictiva">IA Predictiva</a></p>
+                    <p><a href="tecnologia.html#app-cliente">App Cliente</a></p>
+                    <p><a href="tecnologia.html#monitoreo-c5">Monitoreo Remoto</a></p>
+                </div>
+                <div class="footer-section">
+                    <h5>Síguenos</h5>
+                    <div class="social-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" style="display: inline-block; width: 40px; height: 40px; background: var(--accent-blue); color: var(--white); text-align: center; line-height: 40px; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="display: inline-block; width: 40px; height: 40px; background: var(--accent-blue); color: var(--white); text-align: center; line-height: 40px; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="display: inline-block; width: 40px; height: 40px; background: var(--accent-blue); color: var(--white); text-align: center; line-height: 40px; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="display: inline-block; width: 40px; height: 40px; background: var(--accent-blue); color: var(--white); text-align: center; line-height: 40px; border-radius: 50%; transition: all 0.3s ease;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sentinel Seguridad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/526648197723?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20Sentinel%20Seguridad" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+
+        // Form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = document.getElementById('submit-button');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+            
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Disable submit button
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            
+            // Simulate form submission (replace with actual form handling)
+            setTimeout(() => {
+                // For demo purposes, always show success
+                // In real implementation, handle the actual form submission here
+                successMessage.style.display = 'block';
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensaje';
+                
+                // Reset form
+                document.getElementById('contact-form').reset();
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 2000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 43, 77, 0.98)';
+            } else {
+                header.style.background = 'rgba(0, 43, 77, 0.95)';
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav');
+
+        mobileMenu.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.style.display = 'none';
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Phone number formatting
+        document.getElementById('telefono').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 10) {
+                value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+            }
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>

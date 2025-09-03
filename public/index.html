@@ -168,7 +168,7 @@
             color: var(--white);
             padding: 15px 30px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 0;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
@@ -198,6 +198,46 @@
             flex-wrap: wrap;
         }
 
+        /* Trust Indicators */
+        .trust-indicators {
+            background: var(--white);
+            padding: 3rem 0;
+            color: var(--dark-gray);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trust-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .trust-label {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .pattern-bg {
+            z-index: 1;
+        }
+
         .pattern-bg::before {
             content: '';
             position: absolute;
@@ -209,14 +249,14 @@
                 linear-gradient(45deg, transparent 48%, rgba(77, 182, 228, 0.03) 50%, transparent 52%),
                 linear-gradient(-45deg, transparent 48%, rgba(77, 182, 228, 0.03) 50%, transparent 52%);
             background-size: 60px 60px;
-            z-index: 1;
+            z-index: -1;
         }
 
         /* Diferenciales Tecnológicos */
         .diferenciales {
             position: relative;
             background: var(--dark-gray);
-            padding: 5rem 0;
+            padding: 10rem 0;
         }
 
         .section-title {
@@ -250,7 +290,7 @@
         .diferencial-card {
             background: rgba(255, 255, 255, 0.05);
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 0;
             text-align: center;
             border: 1px solid rgba(77, 182, 228, 0.2);
             transition: all 0.3s ease;
@@ -281,14 +321,142 @@
             line-height: 1.6;
         }
 
+        /* Technology Timeline */
+        .tech-timeline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            position: relative;
+            overflow-x: auto;
+            padding: 1rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 160px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(77, 182, 228, 0.4);
+        }
+
+        .timeline-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .timeline-content h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+
+        .timeline-content p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+
+        .timeline-connector {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-blue), transparent);
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .timeline-connector::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--accent-blue);
+            border-radius: 0;
+        }
+
+        /* Technology CTA Section */
+        .tech-cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0;
+            border: 1px solid rgba(77, 182, 228, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .tech-cta h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .tech-cta p {
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tech-cta .cta-button {
+            background: var(--accent-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(77, 182, 228, 0.3);
+            display: inline-block;
+        }
+
+        .tech-cta .cta-button:hover {
+            background: #3da5d4;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(77, 182, 228, 0.4);
+        }
+
         /* Quiénes Somos */
         .quienes-somos {
             background: linear-gradient(rgba(0, 43, 77, 0.8), rgba(0, 43, 77, 0.8)),
-                        url('resized/webp_output/IMG_0219_1920.webp');
+                        url('resized/webp_output/SENTINEL-55_1920.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 5rem 0;
+            padding: 10rem 0;
         }
 
         .quienes-content {
@@ -312,6 +480,27 @@
             line-height: 1.8;
         }
 
+        .about-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .about-link:hover {
+            color: var(--white);
+            gap: 12px;
+        }
+
+        .about-link i {
+            font-size: 0.9rem;
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -322,7 +511,7 @@
             text-align: center;
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            border-radius: 0;
             border: 1px solid rgba(77, 182, 228, 0.3);
         }
 
@@ -365,7 +554,7 @@
 
         .servicio-card {
             background: var(--white);
-            border-radius: 15px;
+            border-radius: 0;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
@@ -378,12 +567,19 @@
 
         .servicio-image {
             height: 200px;
-            background: var(--gradient-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 3rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .servicio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .servicio-card:hover .servicio-image img {
+            transform: scale(1.05);
         }
 
         .servicio-content {
@@ -402,6 +598,8 @@
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
+
+
 
         .servicio-link {
             color: var(--accent-blue);
@@ -442,7 +640,7 @@
         .testimonio-card {
             background: var(--light-gray);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 0;
             text-align: center;
             border-left: 4px solid var(--accent-blue);
         }
@@ -464,6 +662,57 @@
             font-size: 0.9rem;
         }
 
+        /* Results Proof */
+        .results-proof {
+            background: var(--dark-gray);
+            padding: 5rem 0;
+            color: var(--white);
+        }
+
+        .results-proof .section-title h3 {
+            color: var(--accent-blue);
+        }
+
+        .results-proof .section-title p {
+            color: #ccc;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0;
+            border: 1px solid rgba(77, 182, 228, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(77, 182, 228, 0.2);
+        }
+
+        .result-item h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .result-item p {
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
         /* CTA Final */
         .cta-final {
             background: linear-gradient(rgba(0, 43, 77, 0.9), rgba(0, 43, 77, 0.9)),
@@ -472,23 +721,191 @@
             background-position: center;
             background-attachment: fixed;
             padding: 5rem 0;
-            text-align: center;
         }
 
-        .cta-final h4 {
+        .cta-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .cta-text {
+            color: var(--white);
+        }
+
+        .cta-text h4 {
             font-family: 'Oswald', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: var(--accent-blue);
             text-transform: uppercase;
+            line-height: 1.2;
         }
 
-        .cta-final p {
+        .cta-text p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-contact-info {
+            margin-top: 2rem;
+        }
+
+        .cta-contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-contact-info i {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+        }
+
+        .phone-number {
+            font-size: 1.3rem !important;
+            font-weight: 600;
+        }
+
+        .phone-number a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .phone-number a:hover {
+            color: var(--white);
+            border-bottom-color: var(--white);
+        }
+
+        .support-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(77, 182, 228, 0.2);
+            color: var(--white);
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 0;
+            border: 1px solid var(--accent-blue);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .support-button:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .cta-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-form h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 2px rgba(77, 182, 228, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            flex-direction: row !important;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-bottom: 0 !important;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+        }
+
+        .privacy-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-blue);
+        }
+
+        .privacy-link:hover {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .submit-button {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-button:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 43, 77, 0.3);
         }
 
         /* Footer */
@@ -536,7 +953,7 @@
             color: var(--white);
             text-align: center;
             line-height: 40px;
-            border-radius: 50%;
+            border-radius: 0;
             transition: all 0.3s ease;
         }
 
@@ -553,7 +970,7 @@
             color: var(--white);
             width: 60px;
             height: 60px;
-            border-radius: 50%;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -643,6 +1060,59 @@
             .testimonios-grid {
                 grid-template-columns: 1fr;
             }
+
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .tech-timeline {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .timeline-connector {
+                width: 2px;
+                height: 40px;
+                background: linear-gradient(180deg, var(--accent-blue), transparent);
+            }
+
+            .timeline-connector::after {
+                bottom: 0;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            .tech-cta {
+                margin-top: 3rem;
+                padding: 2rem;
+            }
+
+            .tech-cta h4 {
+                font-size: 1.5rem;
+            }
+
+            .cta-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .cta-text h4 {
+                font-size: 2rem;
+            }
+
+            .cta-form {
+                padding: 2rem;
+            }
+
+            .cta-form h5 {
+                font-size: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -656,6 +1126,48 @@
 
             .section-title h3 {
                 font-size: 2rem;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .trust-number {
+                font-size: 2rem;
+            }
+
+            .result-item h4 {
+                font-size: 2.5rem;
+            }
+
+            .timeline-item {
+                max-width: 100%;
+            }
+
+            .timeline-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .timeline-icon i {
+                font-size: 1.5rem;
+            }
+
+            .cta-text h4 {
+                font-size: 1.8rem;
+            }
+
+            .cta-form {
+                padding: 1.5rem;
+            }
+
+            .cta-form h5 {
+                font-size: 1.3rem;
+            }
+
+            .phone-number {
+                font-size: 1.1rem !important;
             }
         }
     </style>
@@ -675,7 +1187,9 @@
                         <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                         <li><a href="servicios.html">Servicios</a></li>
                         <li><a href="tecnologia.html">Tecnología</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="casos-exito.html">Casos de Éxito</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav>
                 <div class="mobile-menu">
@@ -692,154 +1206,184 @@
         <div class="container">
             <div class="hero-content">
                 <h2>Tecnología, Precisión y Confianza</h2>
-                <p>En Sentinel Seguridad protegemos lo que más valoras con soluciones integrales de vigilancia y monitoreo. Combinamos personal capacitado, tecnología de última generación e inteligencia artificial para ofrecer seguridad preventiva, trazable y adaptable a cualquier entorno.</p>
+                <p>Monitoreo 24/7, análisis con IA y respuesta operativa en minutos. Visibilidad total y reportes auditables para tu operación.</p>
                 <div class="hero-buttons">
-                    <a href="#contacto" class="cta-button">Solicita una Cotización</a>
-                    <a href="servicios.html" class="cta-button secondary">Conoce Nuestras Soluciones</a>
+                    <a href="#contacto" class="cta-button">Solicitar Cotización</a>
+                    <a href="servicios.html" class="cta-button secondary">Ver Servicios</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-indicators">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <span class="trust-number">50+</span>
+                    <span class="trust-label">Sitios Protegidos</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">99.9%</span>
+                    <span class="trust-label">Disponibilidad de monitoreo</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">24/7</span>
+                    <span class="trust-label">Operación Continua</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">15+</span>
+                    <span class="trust-label">Años de Experiencia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Servicios Destacados -->
+        <section id="servicios" class="servicios">
+            <div class="container">
+                <div class="section-title">
+                    <h3>Protección Inteligente</h3>
+                    <p>Servicios de vanguardia que combinan tecnología de punta con respuesta operativa para máxima eficiencia y tranquilidad</p>
+                </div>
+                <div class="servicios-grid">
+                    <div class="servicio-card fade-in">
+                        <div class="servicio-image">
+                            <img src="resized/webp_output/SENTINEL-55_1920.webp" alt="Vigilancia Física">
+                        </div>
+                        <div class="servicio-content">
+                            <h5>Vigilancia Física</h5>
+                            <p>Respuesta inmediata en emergencias con despliegue en 15 minutos.</p>
+                            <a href="#" class="servicio-link">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="servicio-card fade-in">
+                        <div class="servicio-image">
+                            <img src="resized/webp_output/SENTINEL-06_1920.webp" alt="Torres Sentinel">
+                        </div>
+                        <div class="servicio-content">
+                            <h5>Torres Sentinel</h5>
+                            <p>Monitoreo 24/7 sin interrupciones con energía solar autónoma.</p>
+                            <a href="#" class="servicio-link">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="servicio-card fade-in">
+                        <div class="servicio-image">
+                            <img src="resized/webp_output/SENTINEL-28_1920.webp" alt="iC5 Móviles">
+                        </div>
+                        <div class="servicio-content">
+                            <h5>iC5 Móviles</h5>
+                            <p>Supervisión estratégica móvil con respuesta en 5 minutos.</p>
+                            <a href="#" class="servicio-link">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="servicio-card fade-in">
+                        <div class="servicio-image">
+                            <img src="resized/webp_output/Gemini_Generated_Image_hc3unhhc3unhhc3u_1920.webp" alt="Monitoreo con IA">
+                        </div>
+                        <div class="servicio-content">
+                            <h5>Monitoreo con IA</h5>
+                            <p>Prevención automática de amenazas con IA predictiva.</p>
+                            <a href="#" class="servicio-link">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="servicio-card fade-in">
+                        <div class="servicio-image">
+                            <img src="resized/webp_output/daniel-charles-hextall-f0bXHOVrKRs-unsplash.jpg" alt="Drones de Vigilancia">
+                        </div>
+                        <div class="servicio-content">
+                            <h5>Drones de Vigilancia</h5>
+                            <p>Cobertura aérea completa para máxima vigilancia perimetral.</p>
+                            <a href="#" class="servicio-link">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="servicio-card fade-in">
+                        <div class="servicio-image">
+                            <img src="resized/webp_output/SENTINEL-71_1920.webp" alt="Escoltas y Guardia Armado">
+                        </div>
+                        <div class="servicio-content">
+                            <h5>Escoltas y Guardia Armado</h5>
+                            <p>Personal entrenado tácticamente y validado por SEDENA.</p>
+                            <a href="#" class="servicio-link">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
 
     <!-- Diferenciales Tecnológicos -->
     <section id="tecnologia" class="diferenciales pattern-bg">
         <div class="container">
             <div class="section-title">
-                <h3>Diferenciales Tecnológicos</h3>
-                <p>Innovación y tecnología de punta para una seguridad superior</p>
+                <h3>Tecnología que Te Mantiene Un Paso Adelante</h3>
+                <p>Herramientas inteligentes para detectar, responder y prevenir amenazas antes de que ocurran</p>
             </div>
-            <div class="diferenciales-grid">
-                <div class="diferencial-card fade-in">
-                    <i class="fas fa-chart-line"></i>
-                    <h4>Plataforma Integral de Reporteo</h4>
-                    <p>Software en la nube para control de rondines, bitácoras digitales, evaluación de KPIs y gestión de incidencias en tiempo real.</p>
-                </div>
-                <div class="diferencial-card fade-in">
-                    <i class="fas fa-video"></i>
-                    <h4>Monitoreo Estilo C4</h4>
-                    <p>Centro de control propio con videovigilancia inteligente, respuesta remota, geolocalización y conexión a IA para detección de amenazas.</p>
-                </div>
-                <div class="diferencial-card fade-in">
-                    <i class="fas fa-brain"></i>
-                    <h4>IA y Análisis Predictivo</h4>
-                    <p>Herramientas que permiten anticipar riesgos y automatizar protocolos de seguridad avanzados.</p>
-                </div>
-                <div class="diferencial-card fade-in">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h4>App para Cliente</h4>
-                    <p>Aplicación personalizada para visualizar estatus de vigilancia, incidentes y comunicación directa con supervisores.</p>
-                </div>
-                <div class="diferencial-card fade-in">
-                    <i class="fas fa-plane"></i>
-                    <h4>Drones y Equipos de Alta Gama</h4>
-                    <p>Vigilancia aérea y periférica con tecnología de última generación para máxima cobertura y eficiencia.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quiénes Somos -->
-    <section id="quienes-somos" class="quienes-somos">
-        <div class="container">
-            <div class="quienes-content">
-                <div class="quienes-text">
-                    <h4>Quiénes Somos</h4>
-                    <p>Somos una empresa de seguridad privada de nueva generación, con el propósito de ofrecer un servicio integral, confiable y altamente tecnológico, enfocado en la protección de personas, bienes e instalaciones.</p>
-                    <p>Nos especializamos en soluciones de vigilancia y monitoreo respaldadas por plataformas inteligentes, sistemas predictivos, tecnología de IA y un modelo operativo basado en eficiencia, rapidez y adaptabilidad.</p>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Años de Experiencia</span>
+    
+            <div class="tech-timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Cobertura Nacional</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Monitoreo Continuo</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">ISO</span>
-                        <span class="stat-label">Certificaciones</span>
+                    <div class="timeline-content">
+                        <h4>Plataforma Integral de Reporteo</h4>
+                        <p>• Control total operativo<br>• KPIs automáticos<br>• Reportes auditables</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios Destacados -->
-    <section id="servicios" class="servicios">
-        <div class="container">
-            <div class="section-title">
-                <h3>Servicios Destacados</h3>
-                <p>Soluciones integrales de seguridad adaptadas a tus necesidades específicas</p>
-            </div>
-            <div class="servicios-grid">
-                <div class="servicio-card fade-in">
-                    <div class="servicio-image">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="timeline-connector"></div>
+    
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-video"></i>
                     </div>
-                    <div class="servicio-content">
-                        <h5>Vigilancia Física</h5>
-                        <p>Protección física de inmuebles con personal capacitado, bitácoras digitales y protocolos de respuesta ante emergencias.</p>
-                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
+                    <div class="timeline-content">
+                        <h4>Monitoreo C4 en tus Instalaciones</h4>
+                        <p>• Respuesta en segundos<br>• Videovigilancia inteligente<br>• IA predictiva</p>
                     </div>
                 </div>
-                <div class="servicio-card fade-in">
-                    <div class="servicio-image">
-                        <i class="fas fa-tower-observation"></i>
+                <div class="timeline-connector"></div>
+    
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <div class="servicio-content">
-                        <h5>Torres Sentinel</h5>
-                        <p>Monitoreo perimetral autónomo con sistema móvil de videovigilancia alimentado por energía solar y conectividad 4G.</p>
-                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="servicio-card fade-in">
-                    <div class="servicio-image">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <div class="servicio-content">
-                        <h5>iC5 Móviles</h5>
-                        <p>Supervisión inteligente y estratégica con vehículos equipados con estrobos y sistemas de comunicación avanzados.</p>
-                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
+                    <div class="timeline-content">
+                        <h4>IA con Análisis Predictivo</h4>
+                        <p>• Anticipa riesgos 48h<br>• Detecta patrones ocultos<br>• Automatiza protocolos</p>
                     </div>
                 </div>
-                <div class="servicio-card fade-in">
-                    <div class="servicio-image">
-                        <i class="fas fa-robot"></i>
+                <div class="timeline-connector"></div>
+    
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <div class="servicio-content">
-                        <h5>Monitoreo con IA</h5>
-                        <p>Sistema de seguridad con inteligencia artificial y protocolos de reacción de proveedores internacionales.</p>
-                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
+                    <div class="timeline-content">
+                        <h4>App Exclusiva para Clientes</h4>
+                        <p>• Control total móvil<br>• Comunicación directa 24/7<br>• Alertas en tiempo real</p>
                     </div>
                 </div>
-                <div class="servicio-card fade-in">
-                    <div class="servicio-image">
+                <div class="timeline-connector"></div>
+    
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
                         <i class="fas fa-plane"></i>
                     </div>
-                    <div class="servicio-content">
-                        <h5>Drones de Vigilancia</h5>
-                        <p>Vigilancia aérea y periférica con drones de alta gama para máxima cobertura y eficiencia operativa.</p>
-                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="servicio-card fade-in">
-                    <div class="servicio-image">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <div class="servicio-content">
-                        <h5>Escoltas y Guardia Armado</h5>
-                        <p>Seguridad ejecutiva y operativa con personal entrenado tácticamente y validado por SEDENA/SEGOB.</p>
-                        <a href="#" class="servicio-link">Conoce más <i class="fas fa-arrow-right"></i></a>
+                    <div class="timeline-content">
+                        <h4>Drones y Equipos de Última Generación</h4>
+                        <p>• Patrullaje 24/7<br>• Detección a 500m<br>• Cobertura perimetral total</p>
                     </div>
                 </div>
             </div>
+    
+            <div class="tech-cta">
+                <h4>¿Quieres ver cómo funciona en tu operación?</h4>
+                <p>Solicita una demo y recibe una cotización adaptada a tus necesidades.</p>
+                <a href="#contacto" class="cta-button">Quiero mi Cotización</a>
+            </div>
         </div>
     </section>
+    
 
     <!-- Casos de Éxito -->
     <section class="casos-exito">
@@ -874,12 +1418,115 @@
         </div>
     </section>
 
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos" class="quienes-somos">
+        <div class="container">
+            <div class="quienes-content">
+                <div class="quienes-text">
+                    <h4>Quiénes Somos</h4>
+                    <p>Somos una empresa de seguridad privada de nueva generación, con el propósito de ofrecer un servicio integral, confiable y altamente tecnológico, enfocado en la protección de personas, bienes e instalaciones.</p>
+                    <p>Nos especializamos en soluciones de vigilancia y monitoreo respaldadas por plataformas inteligentes, sistemas predictivos, tecnología de IA y un modelo operativo basado en eficiencia, rapidez y adaptabilidad.</p>
+                    <a href="quienes-somos.html" class="about-link">Conoce más sobre nosotros <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <!-- <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Años de Experiencia</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Cobertura Nacional</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Monitoreo Continuo</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">ISO</span>
+                        <span class="stat-label">Certificaciones</span>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Proof -->
+    <section class="results-proof">
+        <div class="container">
+            <div class="section-title">
+                <h3>Impacto Real, Resultados Medibles</h3>
+                <p>La tecnología predictiva y la respuesta inteligente se traducen en resultados concretos que transforman tu seguridad</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-item fade-in">
+                    <h4>40%</h4>
+                    <p>Reducción en incidentes de seguridad</p>
+                </div>
+                <div class="result-item fade-in">
+                    <h4>60%</h4>
+                    <p>Menor tiempo de respuesta</p>
+                </div>
+                <div class="result-item fade-in">
+                    <h4>85%</h4>
+                    <p>Mejora en prevención de amenazas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Final -->
     <section class="cta-final">
         <div class="container">
-            <h4>Protegemos lo que más valoras</h4>
-            <p>Con tecnología de última generación y un equipo de profesionales altamente capacitados, garantizamos tu seguridad y la de tus bienes.</p>
-            <a href="#contacto" class="cta-button">Contáctanos</a>
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h4>Protegemos lo que más valoras</h4>
+                    <p>Con tecnología de última generación y un equipo de profesionales altamente capacitados, garantizamos tu seguridad y la de tus bienes.</p>
+                    <div class="cta-contact-info">
+                        <p><i class="fas fa-phone"></i> Habla directamente con un profesional de Sentinel</p>
+                        <p class="phone-number">Llama al <a href="tel:+526648197723">664 819 7723</a></p>
+                        <a href="https://wa.me/526648197723" class="support-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Soporte al Cliente
+                        </a>
+                    </div>
+                </div>
+                <div class="cta-form">
+                    <h5>Contáctanos</h5>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa / Organización</label>
+                            <input type="text" id="empresa" name="empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <input type="text" id="asunto" name="asunto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="privacidad" required>
+                                <span class="checkmark"></span>
+                                Acepto la <a href="#" class="privacy-link">Política de Privacidad</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Información</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -900,6 +1547,9 @@
                     <p><a href="servicios.html#monitoreo-ia">Monitoreo con IA</a></p>
                     <p><a href="servicios.html#drones-vigilancia">Drones de Vigilancia</a></p>
                     <p><a href="servicios.html#escoltas-guardia">Escoltas Ejecutivas</a></p>
+                    <p><a href="casos-exito.html">Casos de Éxito</a></p>
+                    <p><a href="blog.html">Blog</a></p>
+                    <p><a href="contacto.html">Contacto</a></p>
                 </div>
                 <div class="footer-section">
                     <h5>Tecnología</h5>
