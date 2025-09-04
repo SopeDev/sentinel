@@ -321,88 +321,109 @@
             line-height: 1.6;
         }
 
-        /* Technology Hero Section */
-        .tech-hero {
-            background: linear-gradient(rgba(0, 43, 77, 0.8), rgba(0, 43, 77, 0.8)),
-                        url('resized/webp_output/SENTINEL-49_1920.webp');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 6rem 0;
-            position: relative;
-        }
-
-        .tech-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-            margin-bottom: 4rem;
-        }
-
-        .tech-text .section-title {
-            text-align: left;
-            margin-bottom: 0;
-        }
-
-        .tech-text .section-title h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3.5rem;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
-
-        .tech-text .section-title p {
-            color: #e0e0e0;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            max-width: 500px;
-            margin: 0;
-        }
-
-        .tech-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .tech-item {
+        /* Technology Timeline */
+        .tech-timeline {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            padding: 0.5rem 0;
-            transition: all 0.3s ease;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+            padding: 1rem 0;
         }
 
-        .tech-item:hover {
-            transform: translateX(5px);
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 160px;
+            position: relative;
+            flex-shrink: 0;
         }
 
-        .tech-icon {
-            width: 35px;
-            height: 35px;
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
             background: var(--accent-blue);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(77, 182, 228, 0.4);
+        }
+
+        .timeline-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .timeline-content h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+
+        .timeline-content p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .timeline-content li {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 0.3rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .timeline-content li::before {
+            content: '•';
+            color: var(--accent-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .timeline-connector {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-blue), transparent);
+            position: relative;
             flex-shrink: 0;
         }
 
-        .tech-icon i {
-            color: var(--white);
-            font-size: 0.9rem;
-        }
-
-        .tech-item h4 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.95rem;
-            color: var(--white);
-            text-transform: uppercase;
-            margin: 0;
-            line-height: 1.2;
+        .timeline-connector::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--accent-blue);
+            border-radius: 100%;
         }
 
         /* Technology CTA Section */
@@ -656,36 +677,6 @@
 
         .casos-exito .section-title p {
             color: #666;
-        }
-
-        .casos-cta {
-            text-align: center;
-            margin-top: 2.5rem;
-        }
-
-        .casos-link {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .casos-link:hover {
-            color: var(--accent-blue);
-            gap: 0.8rem;
-        }
-
-        .casos-link i {
-            font-size: 0.9rem;
-            transition: transform 0.3s ease;
-        }
-
-        .casos-link:hover i {
-            transform: translateX(3px);
         }
 
         .testimonios-grid {
@@ -1129,13 +1120,15 @@
                 gap: 2rem;
             }
 
-            .tech-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+            .tech-timeline {
+                flex-direction: column;
+                gap: 1.5rem;
             }
 
-            .tech-text .section-title h3 {
-                font-size: 2.5rem;
+            .timeline-connector {
+                width: 2px;
+                height: 40px;
+                background: linear-gradient(180deg, var(--accent-blue), transparent);
             }
 
             .timeline-connector::after {
@@ -1206,29 +1199,25 @@
                 font-size: 2.5rem;
             }
 
-            .tech-text .section-title h3 {
-                font-size: 2rem;
+            .timeline-item {
+                max-width: 100%;
             }
 
-            .tech-text .section-title p {
-                font-size: 1rem;
+            .timeline-icon {
+                width: 70px;
+                height: 70px;
             }
 
-            .tech-item {
-                padding: 0.3rem 0;
+            .timeline-icon i {
+                font-size: 1.5rem;
             }
 
-            .tech-item h4 {
+            .timeline-content ul {
+                text-align: center;
+            }
+
+            .timeline-content li {
                 font-size: 0.85rem;
-            }
-
-            .tech-icon {
-                width: 30px;
-                height: 30px;
-            }
-
-            .tech-icon i {
-                font-size: 0.8rem;
             }
 
             .cta-text h4 {
@@ -1390,50 +1379,85 @@
     
 
     <!-- Diferenciales Tecnológicos -->
-    <section id="tecnologia" class="tech-hero">
+    <section id="tecnologia" class="diferenciales pattern-bg">
         <div class="container">
-            <div class="tech-content">
-                <div class="tech-text">
-                    <div class="section-title">
-                        <h3>Tecnología que Te Mantiene Un Paso Adelante</h3>
-                        <p>Herramientas inteligentes para detectar, responder y prevenir amenazas antes de que ocurran</p>
+            <div class="section-title">
+                <h3>Tecnología que Te Mantiene Un Paso Adelante</h3>
+                <p>Herramientas inteligentes para detectar, responder y prevenir amenazas antes de que ocurran</p>
+            </div>
+    
+            <div class="tech-timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Plataforma Integral de Reporteo</h4>
+                        <ul>
+                            <li>Control total operativo</li>
+                            <li>KPIs automáticos</li>
+                            <li>Reportes auditables</li>
+                        </ul>
                     </div>
                 </div>
-                
-                <div class="tech-list">
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4>Plataforma Integral de Reporteo</h4>
+                <div class="timeline-connector"></div>
+    
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-video"></i>
                     </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-video"></i>
-                        </div>
+                    <div class="timeline-content">
                         <h4>Monitoreo C4 en tus Instalaciones</h4>
+                        <ul>
+                            <li>Respuesta en segundos</li>
+                            <li>Videovigilancia inteligente</li>
+                            <li>IA predictiva</li>
+                        </ul>
                     </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
+                </div>
+                <div class="timeline-connector"></div>
+    
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content">
                         <h4>IA con Análisis Predictivo</h4>
+                        <ul>
+                            <li>Anticipa riesgos 48h</li>
+                            <li>Detecta patrones ocultos</li>
+                            <li>Automatiza protocolos</li>
+                        </ul>
                     </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
+                </div>
+                <div class="timeline-connector"></div>
+    
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="timeline-content">
                         <h4>App Exclusiva para Clientes</h4>
+                        <ul>
+                            <li>Control total móvil</li>
+                            <li>Comunicación directa 24/7</li>
+                            <li>Alertas en tiempo real</li>
+                        </ul>
                     </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-plane"></i>
-                        </div>
+                </div>
+                <div class="timeline-connector"></div>
+    
+                <div class="timeline-item fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="timeline-content">
                         <h4>Drones y Equipos de Última Generación</h4>
+                        <ul>
+                            <li>Patrullaje 24/7</li>
+                            <li>Detección a 500m</li>
+                            <li>Cobertura perimetral total</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1479,10 +1503,6 @@
                     <div class="testimonio-author">Empresa Multinacional</div>
                     <div class="testimonio-role">Director de Seguridad</div>
                 </div>
-            </div>
-            
-            <div class="casos-cta">
-                <a href="casos-exito.html" class="casos-link">Ver todos los casos de éxito <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
